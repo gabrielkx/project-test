@@ -15,5 +15,8 @@ Rails.application.routes.draw do
     resources :menus
     resources :menu_items
     resources :restaurants
+
+
+    post "/importers/restaurant", to: "importers#restaurant"
   end
 end

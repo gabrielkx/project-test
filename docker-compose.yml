@@ -9,6 +9,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     command: entrypoint.sh
+    stdin_open: true
+    tty: true
     ports:
       - "3000:3000"
     depends_on:

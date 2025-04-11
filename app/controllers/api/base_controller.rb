@@ -1,5 +1,5 @@
 class Api::BaseController < ActionController::API
-  def render_success(importer)
+  def render_created(importer)
     render json: {
       status: "success"
     }, status: :created
@@ -26,5 +26,17 @@ class Api::BaseController < ActionController::API
     end
 
     render json: { error: message }, status: :internal_server_error
+  end
+
+  def render_success(data = {}, status: :ok)
+    render json: data, status: status
+  end
+
+  def render_validation_error(record)
+    render json: { error: record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def render_not_found(message = "Not found")
+    render json: { error: message }, status: :not_found
   end
 end

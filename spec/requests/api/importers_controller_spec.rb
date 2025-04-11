@@ -43,7 +43,7 @@ RSpec.describe "Api::ImportersController", type: :request do
       expect(MenuItem.count).to eq(2)
 
       json = JSON.parse(response.body)
-      expect(json).to be_a(Hash) # ou o que o `render_success(importer)` retorna
+      expect(json).to be_a(Hash)
     end
 
     it "returns 400 if no file is uploaded" do

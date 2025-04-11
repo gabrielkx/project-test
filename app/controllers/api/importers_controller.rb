@@ -8,7 +8,7 @@ class Api::ImportersController < Api::BaseController
 
     importer = Importer::Restaurant.new(file: uploaded_file).run
 
-    render_success(importer)
+    render_created(importer)
   rescue JSON::ParserError => e
     render_bad_request("Invalid JSON format: #{e.message}")
   rescue ActiveRecord::RecordInvalid => e

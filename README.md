@@ -2,6 +2,7 @@
 
 **Import the file** `curl-postman.json` **into Postman.**
 
+## Run: docker compose up or docker-compose up
 
 # --- MENUS ---
 

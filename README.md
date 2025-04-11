@@ -1,3 +1,8 @@
+## **👉 TO IMPORT REQUESTS INTO POSTMAN:**
+
+**Import the file** `curl-postman.json` **into Postman.**
+
+
 # --- MENUS ---
 
 # GET /api/menus

@@ -9,13 +9,6 @@ class Api::BaseController < ActionController::API
     render json: { error: message }, status: :bad_request
   end
 
-  def render_validation_error(record)
-    render json: {
-      error: "Validation failed",
-      details: record.errors.full_messages
-    }, status: :unprocessable_entity
-  end
-
   def handle_server_error(error)
     Rails.logger.error("Import Error: #{error.message}\n#{error.backtrace.first(10).join("\n")}")
 
